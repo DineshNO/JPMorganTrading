@@ -1,6 +1,7 @@
 package com.jpmorgan;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -24,8 +25,9 @@ public class TransactionDataHelper {
         List<Transaction> listOfTransaction = new LinkedList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 
-        String fileName = "\\JPMorgan\\src\\Test.txt";
 
+        File file = new File("src/Test.txt");
+        String fileName = file.getAbsolutePath();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
 
             String line;
